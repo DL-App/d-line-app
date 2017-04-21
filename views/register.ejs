@@ -1,0 +1,26 @@
+<% include partials/header %>
+<% include partials/nav-bar %>
+<% include partials/bootstrap %>
+<% include partials/material %>
+<link rel="stylesheet" href="stylesheets/login.css">
+<body>
+  
+<div class="container">
+  <div class="info">
+    <h1>Sign Up</h1>
+  </div>
+</div>
+<div class="form">
+  <div class="thumbnail"><img src="/img/dline.png"></div>
+ <form class="login-form" action="/register" method="POST">
+ <input type="email" name="email" placeholder="E-mail"/>
+    <input type="text" name="username" placeholder="Username"/>
+    <input type="password" name="password" placeholder="Password"/>
+    
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Sign Up</button>
+    <p class="message">Already registered? <a href="/login"> Log In</a></p>
+  </form>
+</div>
+
+
+<% include partials/footer %>
