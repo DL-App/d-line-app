@@ -4,19 +4,20 @@
   "description": "World's first open-source Medical Analysis",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1" ,
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "app.js"
   },
   "author": "shaz13",
   "license": "ISC",
   "engines": {
-  "node": "4.2.6",
-  "npm": "3.5.2"
- },
+    "node": "4.2.6",
+    "npm": "3.5.2"
+  },
   "dependencies": {
     "body-parser": "^1.16.0",
     "connect-flash": "^0.1.1",
     "ejs": "^2.5.5",
+    "express": "^4.15.2",
     "express-session": "^1.14.2",
     "method-override": "^2.3.7",
     "mongoose": "^4.7.7",
