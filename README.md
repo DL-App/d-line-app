@@ -16,9 +16,6 @@ NOTE: The setup instructions will be updated once the app passes out of beta pha
 3. The command line will install necessary pakage files
 
 
-Web demo link: http://www.mohammadshahebaz.com/github/dline/
-
-## How to Run
 
 ### Windows XP/7/8/10
 1. Start mongod service or run just open `run.bat`
@@ -28,6 +25,8 @@ Web demo link: http://www.mohammadshahebaz.com/github/dline/
 ### Ubuntu 16.04 LTS 1
 1. Make sure you have installed and configured MongoDB at your localmachine
 2. Navigate to the d-line-app repository folder and run `bash start.sh`
+
+Web demo link: http://www.mohammadshahebaz.com/github/dline/
 
 ## Troubleshooting
 - If you get an NPM ERR!! code while executing `npm install`. 
