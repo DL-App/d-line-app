@@ -1,3 +1,8 @@
+.dline.navbar.navbar-default {
+    background-color: white;
+    border-radius: 1px;
+    border-color: white;
+  }
 .home-wraper {
   position: absolute;
   top: 50%;

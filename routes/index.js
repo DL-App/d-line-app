@@ -9,8 +9,13 @@ router.get("/", function(req, res){
 console.log(req.user);
     res.render("home", {currentUser:req.user});
 });
+
 router.get("/demo", function(req, res){
    res.render("demo"); 
+});
+
+router.get("/about", function(req, res){
+   res.render("about"); 
 });
 
 // show register form
