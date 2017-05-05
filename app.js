@@ -1,4 +1,4 @@
-var express     = require("express"),
+var express = require("express"),
 app         = express(),
 bodyParser  = require("body-parser"),
 mongoose    = require("mongoose"),
@@ -6,7 +6,6 @@ flash       = require("connect-flash"),
 passport    = require("passport"),
 LocalStrategy = require("passport-local"),
 User        = require("./models/user"),
-GoogleStrategy = require( 'passport-google-oauth2' ).Strategy,
 methodOverride = require("method-override")
 
 
@@ -40,50 +39,7 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new GoogleStrategy({
-    clientID:     '976909333672-2ok2uvpgsua0pppvm46badt11vfp4kok.apps.googleusercontent.com',
-    clientSecret: '976909333672-2ok2uvpgsua0pppvm46badt11vfp4kok.apps.googleusercontent.com',
-    callbackURL: "http://127.0.0.1:3000/auth/google/callback",
-    passReqToCallback   : true
-  },
-  function(token, refreshToken, profile, done) {
-
-        // make the code asynchronous
-        // User.findOne won't fire until we have all our data back from Google
-        process.nextTick(function() {
-
-            // try to find the user based on their google id
-            User.findOne({ 'google.id' : profile.id }, function(err, user) {
-                if (err)
-                    return done(err);
-
-                if (user) {
-
-                    // if a user is found, log them in
-                    return done(null, user);
-                } else {
-                    // if the user isnt in our database, create a new user
-                    var newUser          = new User();
-
-                    // set all of the relevant information
-                    newUser.google.id    = profile.id;
-                    newUser.google.token = token;
-                    newUser.google.name  = profile.displayName;
-                    newUser.google.email = profile.emails[0].value; // pull the first email
-
-                    // save the user
-                    newUser.save(function(err) {
-                        if (err)
-                            throw err;
-                        return done(null, newUser);
-                    });
-                }
-            });
-        });
-
-    }));
-
-
+// Passport configurations
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -110,7 +66,7 @@ res.redirect("/login");
 
 //LISTENING THE PORT 
 app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  console.log("D-line server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
 

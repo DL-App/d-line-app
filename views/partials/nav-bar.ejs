@@ -18,36 +18,36 @@
         <li><a href="#">Contact Us</a></li>
         
       </ul>
-     
-
-<ul class="nav navbar-nav navbar-right">
-                    <% if(!currentUser){ %>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Sign Up</a></li>
-                    <% } else { %>
-                      <li><a href="reports/new">Live Graph</a></li>
-                        <li><a href="#">Logged in as 
-                        
-                        <%= currentUser.username %></a>
-
-                        </li>
-                        <li><a href="/logout">Logout</a></li>
-                    <% } %>
-                </ul>
 
 
-    </div><!-- /.navbar-collapse  -->
-  </div><!-- /.container-fluid -->
+      <ul class="nav navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Sign Up</a></li>
+        <% } else { %>
+        <li><a href="reports/new">Live Graph</a></li>
+        <li><a href="#">Logged in as 
+
+        <strong><%= currentUser.username%></strong>
+        </a>
+      </li>
+      <li><a href="/logout">Logout</a></li>
+      <% } %>
+    </ul>
+
+
+  </div><!-- /.navbar-collapse  -->
+</div><!-- /.container-fluid -->
 </nav>
- <%if(error && error.length > 0){ %>
-            <div class="toast error">
-<p class="message"><%= error %></p>
+<%if(error && error.length > 0){ %>
+<div class="toast error">
+  <p class="message"><%= error %></p>
 </div>
 
-        <% } %>
-        <% if(success && success.length > 0){ %>
-            <div class="toast success">
-<p class="message"><%= success %></p>
+<% } %>
+<% if(success && success.length > 0){ %>
+<div class="toast success">
+  <p class="message"><%= success %></p>
 </div>
-        <% } %>
+<% } %>
 
