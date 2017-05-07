@@ -9,8 +9,13 @@ router.get("/", function(req, res){
 console.log(req.user);
     res.render("home", {currentUser:req.user});
 });
+
 router.get("/demo", function(req, res){
    res.render("demo"); 
+});
+
+router.get("/about", function(req, res){
+   res.render("about"); 
 });
 
 // show register form
@@ -18,7 +23,7 @@ router.get("/register", function(req, res){
    res.render("register"); 
 });
 
-//handle sign up logic
+//Handle sign up logic
 router.post("/register", function(req, res){
     var newUser = new User({username: req.body.username, email: req.body.email});
     User.register(newUser, req.body.password, function(err, user){
@@ -33,18 +38,6 @@ router.post("/register", function(req, res){
     });
 });
 
- // Google login
- router.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
-
-router.get('/auth/google/callback',
-            passport.authenticate('google', {
-                    successRedirect : '/demo',
-                    failureRedirect : '/'
-            }));
-
-
-
-
 //show login form
 
 router.get("/login", function(req, res){
@@ -54,20 +47,13 @@ router.get("/login", function(req, res){
 //handling login logic
 router.post("/login", passport.authenticate("local", 
     {
-
-     
-          successRedirect:"/demo",
-        
-       
-        failureRedirect: "/login"
+      successRedirect:"/demo",
+      failureRedirect: "/login"
         
 
     }), function(req, res){
-console.log(req);
+          console.log(req);
 });
-
-
-
 
 
 // logout route

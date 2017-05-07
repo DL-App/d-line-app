@@ -4,7 +4,7 @@ var A=$('#input1').val();
 $("#input1").bind("change paste keyup", function() {
    A=$('#input1').val();
 });
-var FBS= [A, 135, 167, 158, 145, 150, 125]; 
+var FBS= [120, 135, 167, 158, 145, 150, 125]; 
 var PP=[251, 210, 305, 281, 213, 250, 218];
 var AVG=[];
 
