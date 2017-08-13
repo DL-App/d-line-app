@@ -22,7 +22,7 @@ NOTE: The setup instructions will be updated once the app passes out of beta pha
 2. Run `node app.js` to start the D-line
 3. Open your browser at `localhost:3000`
 
-### Ubuntu 16.04 LTS
+### Ubuntu 16.04 LTS / Mac OS Sierra + 
 1. Make sure you have installed and configured MongoDB at your localmachine
 2. Navigate to the d-line-app repository folder and run `bash start.sh`
 3. Open your browser at `localhost:3000`
