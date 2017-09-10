@@ -4,7 +4,7 @@ D-line is just a personal thought ended up being a repository here. Its currentl
 
 NOTE: The setup instructions will be updated once the app passes out of beta phase. 
 
-## Prerequisites on your local machine 
+## Prerequisites
 1. Node.js
 2. npm
 3. MongoDB 
@@ -27,7 +27,7 @@ NOTE: The setup instructions will be updated once the app passes out of beta pha
 2. Navigate to the d-line-app repository folder and run `bash start.sh`
 3. Open your browser at `localhost:3000`
 
-Web demo link: http://www.mohammadshahebaz.com/github/dline/
+Web demo link: https://shaz13.github.io/demo-d-line/
 
 ## Troubleshooting
 - If you get an NPM ERR!! code while executing `npm install`. 
